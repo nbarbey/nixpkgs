@@ -18745,4 +18745,26 @@ let
     };
   };
 
+  yum-metadata-parser = buildPythonPackage rec {
+    name = "yum-metadata-parser-${version}";
+    version = "1.1.4";
+    buildInputs = with self; [ pkgs.gcc pkgs.pkgconfig ];
+    propagatedBuildInputs = [
+      pkgs.glib
+      pkgs.libxml2
+      pkgs.sqlite
+    ];
+
+    src = pkgs.fetchurl {
+      url = "https://yum.baseurl.org/download/yum-metadata-parser/yum-metadata-parser-${version}.tar.gz";
+      sha256 = "f1560a284541feb720c3ae35b6b31f80c2be5cb9ca86b3a1ee9459846f821ada";
+    };
+
+    meta = {
+      description = "C-based metadata parser to quickly parse xml metadata into sqlite databases.";
+      homepage = http://yum.baseurl.org/download/yum-metadata-parser/;
+      license = licenses.gpl2;
+    };
+  };
+
 }; in pythonPackages
