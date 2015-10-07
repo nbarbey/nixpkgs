@@ -1,0 +1,10 @@
+--- yum-3.4.3/Makefile	2015-10-08 06:38:14.172806139 +0000
++++ yum-3.4.3new/Makefile	2015-10-08 06:38:44.409175451 +0000
+@@ -10,6 +10,7 @@
+ PYTHON=python
+ WEBHOST = yum.baseurl.org
+ WEB_DOC_PATH = /srv/projects/yum/web/download/docs/yum-api/
++DESTDIR=$(prefix)
+ 
+ all: subdirs
+ 

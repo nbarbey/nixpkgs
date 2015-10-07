@@ -15069,6 +15069,8 @@ let
 
   yandex-disk = callPackage ../tools/filesystems/yandex-disk { };
 
+  yum = callPackage ../tools/package-management/yum { };
+
   zdfmediathk = callPackage ../applications/video/zdfmediathk { };
 
   zopfli = callPackage ../tools/compression/zopfli { };
